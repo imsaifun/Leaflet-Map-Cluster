@@ -7,7 +7,8 @@ import "react-leaflet-markercluster/dist/styles.min.css";
 import L from 'leaflet';
 
 const customMsrker = L.icon({
-  iconUrl: "https://i.ibb.co/sJrMTdz/favicon-32x32.png"
+  iconUrl: "https://i.ibb.co/sJrMTdz/favicon-32x32.png",
+  iconSize: [30, 30]
 });
 
 function MapCluster() {
