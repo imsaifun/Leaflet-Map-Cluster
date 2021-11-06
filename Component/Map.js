@@ -4,6 +4,12 @@ import MarkerClusterGroup from "react-leaflet-markercluster";
 import "leaflet/dist/leaflet.css";
 import "react-leaflet-markercluster/dist/styles.min.css";
 
+import L from 'leaflet';
+
+const customMsrker = L.icon({
+  iconUrl: "https://i.ibb.co/sJrMTdz/favicon-32x32.png"
+});
+
 function MapCluster() {
     return (
         <MapContainer
@@ -13,20 +19,20 @@ function MapCluster() {
             maxZoom={18}
             scrollWheelZoom={false}
         >
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <TileLayer url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"/>
 
             <MarkerClusterGroup>
-                <Marker position={[49.8397, 24.0297]}>
+                <Marker position={[49.8397, 24.0297]} icon={customMsrker}>
                     <Popup>
                         A pretty CSS3 popup. <br /> Easily customizable.
                     </Popup>
                 </Marker>
-                <Marker position={[52.2297, 21.0122]}>
+                <Marker position={[52.2297, 21.0122]} icon={customMsrker}>
                     <Popup>
                         A pretty CSS3 popup. <br /> Easily customizable.
                     </Popup>
                 </Marker>
-                <Marker position={[51.5074, -0.0901]} />
+                <Marker position={[51.5074, -0.0901]} icon={customMsrker} />
             </MarkerClusterGroup>
         </MapContainer>
     );
